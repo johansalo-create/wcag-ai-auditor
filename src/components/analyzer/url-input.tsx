@@ -49,7 +49,7 @@ export function UrlInput({ onAnalyze, isLoading }: UrlInputProps) {
     <form onSubmit={handleSubmit} className="space-y-4">
       <div className="space-y-2">
         <label htmlFor="url-input" className="text-sm font-medium flex items-center gap-2">
-          <Globe className="h-4 w-4" />
+          <Globe className="h-4 w-4" aria-hidden="true" />
           Webbadress
         </label>
         <div className="flex gap-2">
@@ -69,11 +69,11 @@ export function UrlInput({ onAnalyze, isLoading }: UrlInputProps) {
           />
           <Button type="submit" disabled={isLoading || !url.trim()}>
             {isLoading ? (
-              <Loader2 className="h-4 w-4 animate-spin" />
+              <Loader2 className="h-4 w-4 animate-spin" aria-hidden="true" />
             ) : (
               <>
                 Analysera
-                <ArrowRight className="h-4 w-4 ml-2" />
+                <ArrowRight className="h-4 w-4 ml-2" aria-hidden="true" />
               </>
             )}
           </Button>

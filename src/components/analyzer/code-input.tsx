@@ -38,7 +38,7 @@ export function CodeInput({ onAnalyze, isLoading }: CodeInputProps) {
     <form onSubmit={handleSubmit} className="space-y-4">
       <div className="space-y-2">
         <label htmlFor="code-input" className="text-sm font-medium flex items-center gap-2">
-          <Code className="h-4 w-4" />
+          <Code className="h-4 w-4" aria-hidden="true" />
           HTML/CSS-kod
         </label>
         <Textarea
@@ -55,7 +55,7 @@ export function CodeInput({ onAnalyze, isLoading }: CodeInputProps) {
           <button
             type="button"
             onClick={() => setCode(exampleCode)}
-            className="text-primary hover:underline"
+            className="text-primary hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 rounded-sm"
           >
             Ladda exempelkod
           </button>
@@ -63,11 +63,11 @@ export function CodeInput({ onAnalyze, isLoading }: CodeInputProps) {
       </div>
       <Button type="submit" disabled={isLoading || !code.trim()} className="w-full sm:w-auto">
         {isLoading ? (
-          <Loader2 className="h-4 w-4 animate-spin" />
+          <Loader2 className="h-4 w-4 animate-spin" aria-hidden="true" />
         ) : (
           <>
             Analysera kod
-            <ArrowRight className="h-4 w-4 ml-2" />
+            <ArrowRight className="h-4 w-4 ml-2" aria-hidden="true" />
           </>
         )}
       </Button>

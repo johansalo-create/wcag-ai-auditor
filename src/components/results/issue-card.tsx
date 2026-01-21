@@ -20,8 +20,9 @@ export function IssueCard({ issue }: IssueCardProps) {
       <CardHeader className="p-4 pb-0">
         <button
           onClick={() => setIsExpanded(!isExpanded)}
-          className="flex items-start justify-between gap-4 w-full text-left"
+          className="flex items-start justify-between gap-4 w-full text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 rounded-sm"
           aria-expanded={isExpanded}
+          aria-label={`${issue.title}, ${isExpanded ? 'dölj detaljer' : 'visa detaljer'}`}
         >
           <div className="flex-1 min-w-0">
             <div className="flex items-center gap-2 flex-wrap mb-1">
@@ -32,7 +33,7 @@ export function IssueCard({ issue }: IssueCardProps) {
             </div>
             <h3 className="font-semibold text-sm">{issue.title}</h3>
           </div>
-          <div className="flex-shrink-0 text-muted-foreground">
+          <div className="flex-shrink-0 text-muted-foreground" aria-hidden="true">
             {isExpanded ? (
               <ChevronUp className="h-5 w-5" />
             ) : (
@@ -49,7 +50,7 @@ export function IssueCard({ issue }: IssueCardProps) {
           {issue.element && (
             <div className="space-y-1">
               <div className="flex items-center gap-2 text-xs font-medium text-muted-foreground">
-                <Code className="h-3 w-3" />
+                <Code className="h-3 w-3" aria-hidden="true" />
                 Element
               </div>
               <pre className="text-xs bg-muted p-3 rounded-lg overflow-x-auto font-mono">
@@ -61,7 +62,7 @@ export function IssueCard({ issue }: IssueCardProps) {
           {issue.fix && (
             <div className="space-y-1">
               <div className="flex items-center gap-2 text-xs font-medium text-primary">
-                <Lightbulb className="h-3 w-3" />
+                <Lightbulb className="h-3 w-3" aria-hidden="true" />
                 Föreslagen lösning
               </div>
               <div className="text-sm bg-primary/5 border border-primary/10 p-3 rounded-lg">
@@ -74,10 +75,11 @@ export function IssueCard({ issue }: IssueCardProps) {
             href={wcagUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-1 text-xs text-primary hover:underline"
+            className="inline-flex items-center gap-1 text-xs text-primary hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 rounded-sm"
           >
             Läs mer om WCAG {issue.criterion}
-            <ExternalLink className="h-3 w-3" />
+            <ExternalLink className="h-3 w-3" aria-hidden="true" />
+            <span className="sr-only">(öppnas i nytt fönster)</span>
           </a>
         </CardContent>
       )}

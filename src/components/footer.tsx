@@ -9,9 +9,10 @@ export function Footer() {
               href="https://groq.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="font-medium text-foreground hover:underline"
+              className="font-medium text-foreground hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 rounded-sm"
             >
               Groq AI
+              <span className="sr-only"> (öppnas i nytt fönster)</span>
             </a>
             {" "}& Llama 3
           </p>
@@ -21,9 +22,10 @@ export function Footer() {
               href="https://www.w3.org/WAI/WCAG21/quickref/"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:underline"
+              className="hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 rounded-sm"
             >
               officiella WCAG-riktlinjer
+              <span className="sr-only"> (öppnas i nytt fönster)</span>
             </a>
           </p>
         </div>

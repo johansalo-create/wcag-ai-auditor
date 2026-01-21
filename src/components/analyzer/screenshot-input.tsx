@@ -98,7 +98,7 @@ export function ScreenshotInput({ onAnalyze, isLoading }: ScreenshotInputProps) 
               className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
             />
             <div className="flex flex-col items-center gap-2">
-              <div className="h-12 w-12 rounded-full bg-muted flex items-center justify-center">
+              <div className="h-12 w-12 rounded-full bg-muted flex items-center justify-center" aria-hidden="true">
                 <Upload className="h-6 w-6 text-muted-foreground" />
               </div>
               <div>
@@ -118,7 +118,7 @@ export function ScreenshotInput({ onAnalyze, isLoading }: ScreenshotInputProps) 
             <button
               type="button"
               onClick={clearPreview}
-              className="absolute top-2 right-2 h-8 w-8 rounded-full bg-background border border-border shadow-md flex items-center justify-center hover:bg-muted transition-colors"
+              className="absolute top-2 right-2 h-8 w-8 rounded-full bg-background border border-border shadow-md flex items-center justify-center hover:bg-muted transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
               aria-label="Ta bort bild"
             >
               <X className="h-4 w-4" aria-hidden="true" />
@@ -139,11 +139,11 @@ export function ScreenshotInput({ onAnalyze, isLoading }: ScreenshotInputProps) 
 
       <Button type="submit" disabled={isLoading || !preview} className="w-full sm:w-auto">
         {isLoading ? (
-          <Loader2 className="h-4 w-4 animate-spin" />
+          <Loader2 className="h-4 w-4 animate-spin" aria-hidden="true" />
         ) : (
           <>
             Analysera bild
-            <ArrowRight className="h-4 w-4 ml-2" />
+            <ArrowRight className="h-4 w-4 ml-2" aria-hidden="true" />
           </>
         )}
       </Button>

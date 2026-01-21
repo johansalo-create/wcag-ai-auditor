@@ -40,11 +40,11 @@ export function ResultsView({ result, onBack }: ResultsViewProps) {
     <div className="space-y-6">
       <div className="flex items-center justify-between">
         <Button variant="ghost" onClick={onBack} className="gap-2">
-          <ArrowLeft className="h-4 w-4" />
+          <ArrowLeft className="h-4 w-4" aria-hidden="true" />
           Ny analys
         </Button>
         <Button variant="outline" className="gap-2">
-          <Download className="h-4 w-4" />
+          <Download className="h-4 w-4" aria-hidden="true" />
           Exportera PDF
         </Button>
       </div>
@@ -75,10 +75,10 @@ export function ResultsView({ result, onBack }: ResultsViewProps) {
           <div className="space-y-4">
             <div className="flex items-center justify-between flex-wrap gap-2">
               <h3 className="font-semibold flex items-center gap-2">
-                <Filter className="h-4 w-4" />
+                <Filter className="h-4 w-4" aria-hidden="true" />
                 Hittade problem ({filteredIssues.length})
               </h3>
-              <div className="flex gap-1 flex-wrap">
+              <div className="flex gap-1 flex-wrap" role="group" aria-label="Filtrera problem efter allvarlighetsgrad">
                 <Button
                   variant={filter === "all" ? "default" : "outline"}
                   size="sm"
@@ -130,7 +130,7 @@ export function ResultsView({ result, onBack }: ResultsViewProps) {
             </div>
 
             {filteredIssues.length === 0 ? (
-              <div className="text-center py-8 text-muted-foreground">
+              <div className="text-center py-8 text-muted-foreground" role="status">
                 Inga problem hittades med detta filter.
               </div>
             ) : (

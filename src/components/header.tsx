@@ -7,7 +7,7 @@ export function Header() {
     <header className="border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-16 items-center justify-between px-4 mx-auto max-w-5xl">
         <div className="flex items-center gap-3">
-          <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary text-primary-foreground">
+          <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary text-primary-foreground" aria-hidden="true">
             <Shield className="h-5 w-5" />
           </div>
           <div>
@@ -20,9 +20,10 @@ export function Header() {
             href="https://www.w3.org/WAI/WCAG21/quickref/"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+            className="text-sm text-muted-foreground hover:text-foreground transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 rounded-sm"
           >
             WCAG 2.1
+            <span className="sr-only"> (öppnas i nytt fönster)</span>
           </a>
         </nav>
       </div>
