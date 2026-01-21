@@ -70,8 +70,8 @@ export function ScreenshotInput({ onAnalyze, isLoading }: ScreenshotInputProps) 
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
       <div className="space-y-2">
-        <label className="text-sm font-medium flex items-center gap-2">
-          <ImageIcon className="h-4 w-4" />
+        <label htmlFor="screenshot-input" className="text-sm font-medium flex items-center gap-2">
+          <ImageIcon className="h-4 w-4" aria-hidden="true" />
           Skärmdump
         </label>
 
@@ -90,12 +90,12 @@ export function ScreenshotInput({ onAnalyze, isLoading }: ScreenshotInputProps) 
             `}
           >
             <input
+              id="screenshot-input"
               type="file"
               accept="image/*"
               onChange={handleChange}
               disabled={isLoading}
               className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
-              aria-label="Välj eller dra en bild"
             />
             <div className="flex flex-col items-center gap-2">
               <div className="h-12 w-12 rounded-full bg-muted flex items-center justify-center">
@@ -118,10 +118,10 @@ export function ScreenshotInput({ onAnalyze, isLoading }: ScreenshotInputProps) 
             <button
               type="button"
               onClick={clearPreview}
-              className="absolute top-2 right-2 h-8 w-8 rounded-full bg-background/80 backdrop-blur flex items-center justify-center hover:bg-background transition-colors"
+              className="absolute top-2 right-2 h-8 w-8 rounded-full bg-background border border-border shadow-md flex items-center justify-center hover:bg-muted transition-colors"
               aria-label="Ta bort bild"
             >
-              <X className="h-4 w-4" />
+              <X className="h-4 w-4" aria-hidden="true" />
             </button>
           </div>
         )}

@@ -111,16 +111,16 @@ export function Analyzer() {
         <Tabs defaultValue="url" className="w-full">
           <TabsList className="grid w-full grid-cols-3 mb-6">
             <TabsTrigger value="url" className="flex items-center gap-2">
-              <Globe className="h-4 w-4" />
-              <span className="hidden sm:inline">URL</span>
+              <Globe className="h-4 w-4" aria-hidden="true" />
+              <span className="sr-only sm:not-sr-only">URL</span>
             </TabsTrigger>
             <TabsTrigger value="code" className="flex items-center gap-2">
-              <Code className="h-4 w-4" />
-              <span className="hidden sm:inline">Kod</span>
+              <Code className="h-4 w-4" aria-hidden="true" />
+              <span className="sr-only sm:not-sr-only">Kod</span>
             </TabsTrigger>
             <TabsTrigger value="screenshot" className="flex items-center gap-2">
-              <ImageIcon className="h-4 w-4" />
-              <span className="hidden sm:inline">Skärmdump</span>
+              <ImageIcon className="h-4 w-4" aria-hidden="true" />
+              <span className="sr-only sm:not-sr-only">Bild</span>
             </TabsTrigger>
           </TabsList>
 

@@ -3,7 +3,10 @@ import { Card, CardContent, CardHeader } from "@/components/ui/card";
 
 export function LoadingSkeleton() {
   return (
-    <div className="space-y-6">
+    <div className="space-y-6" aria-busy="true" aria-label="Laddar analysresultat">
+      <div className="sr-only" role="status" aria-live="polite">
+        Analyserar tillgänglighet, vänligen vänta...
+      </div>
       <div className="flex items-center justify-between">
         <Skeleton className="h-10 w-24" />
         <Skeleton className="h-10 w-32" />
