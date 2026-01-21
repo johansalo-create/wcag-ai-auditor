@@ -71,8 +71,9 @@ export async function POST(request: NextRequest) {
     return NextResponse.json(result);
   } catch (error) {
     console.error("Analysis error:", error);
+    const errorMessage = error instanceof Error ? error.message : "Unknown error";
     return NextResponse.json(
-      { error: "Ett fel uppstod vid analys" },
+      { error: `Analysfel: ${errorMessage}` },
       { status: 500 }
     );
   }
